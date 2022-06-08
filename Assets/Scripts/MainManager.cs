@@ -15,7 +15,7 @@ public class MainManager : MonoBehaviour
     public GameObject GameOverText;
     
     private bool m_Started = false;
-    private int m_Points;
+    private int m_Points = 0;
     
     private bool m_GameOver = false;
 
@@ -38,6 +38,7 @@ public class MainManager : MonoBehaviour
             }
         }
 
+        ScoreText.text = DataManager.Instance.playerName + " Score : " + m_Points;
         bestScore.text = "Best Score: " + DataManager.Instance.highscoreName + " " + DataManager.Instance.highscore.ToString();
     }
 
@@ -73,7 +74,7 @@ public class MainManager : MonoBehaviour
     void AddPoint(int point)
     {
         m_Points += point;
-        ScoreText.text = $"{DataManager.Instance.playerName}, Score : {m_Points}";
+        ScoreText.text = $"{DataManager.Instance.playerName} Score : {m_Points}";
 
         if (m_Points > DataManager.Instance.highscore)
         {
