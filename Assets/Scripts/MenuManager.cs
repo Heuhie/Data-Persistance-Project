@@ -22,6 +22,11 @@ public class MenuManager : MonoBehaviour
         Debug.Log(inputPlayerName);
     }
 
+    public void GoToHighScore()
+    {
+        SceneManager.LoadScene(2);
+    }
+
     public void Exit()
     {
         DataManager.Instance.SaveScore();
